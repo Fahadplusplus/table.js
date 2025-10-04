@@ -25,7 +25,7 @@ table.addEventListener("click", (e) => {
 
     currentEditIndex = index;
 
-    EfullName.value = data.fullname;
+    EfullName.value = data.fullname; // fullname
     Eposition.value = data.position;
     Eoffice.value = data.office;
     Eage.value = data.age;
