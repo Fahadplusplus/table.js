@@ -1,0 +1,40 @@
+const img1 = document.getElementById("nameImg1")
+const img2 = document.getElementById("nameImg2")
+
+
+img1.addEventListener('click', ()=>{
+    img1.classList.add("hidden")
+    img2.classList.remove("hidden")
+   sortTable()
+    
+})
+
+
+function sortTable(){
+ //   let modifer = asc ? 1 : -1;
+    let table = document.getElementById("tableBody")
+    let tr = Array.from(table.querySelectorAll("tr"))
+    console.log(tr.textContent);
+    
+     
+    // let sortedRows =tr.sort((a,b)=>{
+
+    //     let aColText = a.querySelectorAll("tr").textContent;
+    //     let bColText = b.querySelectorAll.textContent;
+    //     console.log(aColText);
+        
+
+    //     return aColText > bColText ? (1 * modifer) : (-1 * modifer)
+ 
+    // })
+    // console.log(sortedRows);
+    
+}
+    
+
+
+img2.addEventListener('click', ()=>{
+    img1.classList.remove("hidden")
+    img2.classList.add("hidden")
+    
+})
