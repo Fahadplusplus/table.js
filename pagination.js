@@ -6,7 +6,7 @@ let currentPage = 1;
 let total_pages = 1;
 
 const total_record = document.querySelectorAll("#tableBody tr").length   ;
-total_pages = Math.ceil(total_record / records_per_page ); // Removed *2
+total_pages = Math.ceil(total_record / records_per_page ); 
 
 displayRecords(currentPage);
 genPage();
@@ -37,11 +37,14 @@ function genPage() {
   paginationContainer.innerHTML = `${preBtn}${buttons}${nextBtn}`;
 
   document.querySelectorAll(".page-btn").forEach((btn) => {
+    
     btn.addEventListener("click", (e) => {
+      
       e.preventDefault();
       currentPage = parseInt(btn.dataset.page);
       displayRecords(currentPage);
       genPage();
+      pageDetails.innerHTML = `showing ${(currentPage - 1) * records_per_page + 1 } to ${Math.min(currentPage * records_per_page, total_record)} of ${total_record }`;
     });
   });
 
@@ -51,6 +54,7 @@ function genPage() {
       currentPage--;
       displayRecords(currentPage);
       genPage();
+       pageDetails.innerHTML = `showing ${(currentPage - 1) * records_per_page + 1 } to ${Math.min(currentPage * records_per_page, total_record)} of ${total_record }`;
     }
   });
 
@@ -60,6 +64,7 @@ function genPage() {
       currentPage++;
       displayRecords(currentPage);
       genPage();
+       pageDetails.innerHTML = `showing ${(currentPage - 1) * records_per_page + 1 } to ${Math.min(currentPage * records_per_page, total_record)} of ${total_record }`;
     }
   });
 }
@@ -67,16 +72,18 @@ function genPage() {
 selectElement.addEventListener('change', (event) => {
   let selectedValue = event.target.value;
 
-
-  records_per_page = selectedValue;
+  if (selectedValue < total_record){
+     records_per_page = selectedValue;
   
   const total_record = document.querySelectorAll("#tableBody tr").length;
   total_pages = Math.ceil(total_record / records_per_page ); 
   displayRecords(currentPage);
   genPage();
-
-  // Update page details
+  
   pageDetails.innerHTML = `showing ${(currentPage - 1) * records_per_page + 1 } to ${Math.min(currentPage * records_per_page, total_record)} of ${total_record }`;
+
+  }
+ 
 });
 
 pageDetails.innerHTML = `showing 1 to ${Math.min(records_per_page, total_record)} of ${total_record}`;

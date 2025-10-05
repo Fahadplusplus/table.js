@@ -19,6 +19,7 @@ const confirmdelete = document.getElementById("confirmDelete")
 
 main.classList.add("hidden")
 dmain.classList.add("hidden")
+const id = document.getElementById("Id");
 const fullName = document.getElementById("Name");
 const position = document.getElementById("Position");
 const office = document.getElementById("Office");
@@ -28,6 +29,7 @@ const salary = document.getElementById("Salary");
 
 function formdata() {
   jsonObj.push({
+    Id: id.value,
     fullname: fullName.value.charAt(0).toUpperCase() + fullName.value.slice(1),
     position: position.value,
     office: office.value,

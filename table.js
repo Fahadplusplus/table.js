@@ -11,7 +11,7 @@ function addRows(jsonObj) {
     tdata.classList.add("data-row");
 
     
-
+    const cell0 = document.createElement("td");
     const cell1 = document.createElement("td");
     const cell2 = document.createElement("td");
     const cell3 = document.createElement("td");
@@ -23,6 +23,8 @@ function addRows(jsonObj) {
     cell5.appendChild(deleteBtn);
 
     
+    cell0.innerText = element.Id
+    cell0.style.padding = "8px";
 
     cell1.innerText = element.fullname;
     cell1.style.padding = "8px";
@@ -35,7 +37,7 @@ function addRows(jsonObj) {
 
     cell4.innerText = element.age;
     cell4.style.padding = "8px";
-    cell4.style.textAlign = "end";
+    //cell4.style.textAlign = "end";
 
     editBtn.src = "asset/pen-to-square-regular-full.svg";
     editBtn.classList.add("editButton","h-10");
@@ -48,7 +50,7 @@ function addRows(jsonObj) {
     cell5.classList.add("flex", "justify-center", "items-center");
 
    
-
+    tdata.appendChild(cell0);
     tdata.appendChild(cell1);
     tdata.appendChild(cell2);
     tdata.appendChild(cell3);

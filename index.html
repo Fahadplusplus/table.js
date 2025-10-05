@@ -43,6 +43,17 @@
         <table id="dataTable" class="w-full text-sm text-left">
           <thead class="bg-gray-100 border-b">
             <tr>
+               <th class="p-2 font-medium">
+                <div class="flex justify-between items-center">
+                  <span>ID </span>
+                  <div class="flex gap-1">
+                    <img id="nameImg" class="h-4 hidden" src="asset/sort-solid-full.svg" alt="sort" />
+                    <img id="nameImg1" class="h-4" src="asset/arrow-up-short-wide-solid-full.svg" alt="sort" />
+                    <img id="nameImg2" class="h-4 hidden" src="asset/arrow-down-wide-short-solid-full.svg" alt="" />
+                    <img class="h-4" src="asset/bars-solid-full (1).svg" alt="filter" />
+                  </div>
+                </div>
+              </th>
               <th class="p-2 font-medium">
                 <div class="flex justify-between items-center">
                   <span>Name</span>
@@ -138,7 +149,14 @@
             <p class="text-center py-2 text-xl font-medium">Enter Details</p>
             <form name="myForm" onsubmit=" return validateForm()">
               <div class="grid grid-cols-2 gap-x-20">
-                <div id="inE" class="forInput flex flex-col my-2">
+                <div id="input0" class="forInput flex flex-col my-2">
+                  <label class="text-2xl" for="">ID</label>
+                  <input id="Id" name="fid" class="border border-gray-300 rounded px-2 py-1 text-sm shadow-md h-10"
+                    type="text" placeholder="ID" />
+                  <span class="errorMsg text-red-600"></span>
+                </div>
+              <div class="grid grid-cols-2 gap-x-20">
+                <div id="input1" class="forInput flex flex-col my-2">
                   <label class="text-2xl" for="">Name</label>
                   <input id="Name" name="fname" class="border border-gray-300 rounded px-2 py-1 text-sm shadow-md h-10"
                     type="text" placeholder="Name" />

@@ -1,7 +1,10 @@
 function validateForm() {
   let returnVal = true;
 
-
+    if (Id.value.trim().length !== 3) {
+    setError("input0", "Enter a valid ID");
+    returnVal = false;
+  }
 
   if (fullName.value.trim().length < 3 || !/^[A-Za-z\s]+$/.test(fullName.value.trim()) || fullName.value.trim().length > 15) {
     setError("input1", "Enter a valid name");
